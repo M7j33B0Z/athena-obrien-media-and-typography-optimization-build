@@ -1,0 +1,322 @@
+/* CSS by Athena O'Brien */
+
+/* Imported Fonts */
+@import url("https://use.typekit.net/kxq0kzg.css");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Gravitas+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* CSS Reset */
+ *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+/*ROOT*/
+
+:root {
+        --background-color: #ede6d3;
+        --text-color: #000000;
+        --header-footer-buttons: #FFA30D;
+        --hero-card-nav:#3AB055;
+
+        --radius: 25px;
+
+        --more-space: 1rem;
+        --less-space: 0.5rem;
+
+        --on-focus: 2px solid var(--text-color);
+
+        --heading-one: "Gravitas One", serif; 
+        --h1-weight: 400;
+        
+        --subhead-and-body: "helvetica-neue-lt-pro", sans-serif;
+   
+        --h2-weight: 700;
+        
+        --body-weight: 300;
+            
+        --font-style: normal;
+
+
+    }
+
+/* Global Styles - Mobile First */
+
+@layer base, layout, components, utilities, states, overrides, print;
+
+@layer base {
+    body {
+        margin: 0 auto;
+        background-color: var(--background-color);
+
+    }
+
+    header {
+        background-color: var(--header-footer-buttons);
+
+    }
+
+    main {
+        align-content: center;
+    }
+
+    nav {
+        display: flex;
+        padding: var(--more-space);
+        
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: var(--less-space);
+        margin: var(--more-space);
+        justify-content: center;
+
+    }
+
+    nav a {
+        font-family: var(--subhead-and-body);
+    }
+    
+    h1 {
+        color: var(--text-color);
+        font-family: var(--heading-one);
+        font-weight: var(--h1-weight);
+        font-style: var(--font-style);
+        
+        
+    }
+
+    h2 {
+        color: var(--text-color);
+        font-family: var(--subhead-and-body);
+        font-weight: var(--h2-weight);
+        font-style: var(--font-style);
+    }
+
+     p {
+        font-family: var(--subhead-and-body);
+        font-weight: var(--body-weight);
+        margin-left: var(--more-space);
+    }
+
+    a {
+        font-family: var(--subhead-and-body);
+        font-weight: var(--body-weight);
+        color: var(--background-color);
+        text-decoration: none;
+
+        background-color: var(--hero-card-nav);
+        border-radius: var(--radius);
+
+        padding: var(--less-space);
+    }
+
+    figcaption {
+        font-family: var(--subhead-and-body);
+        font-weight: var(--body-weight);
+        padding: var(--more-space);
+        
+        
+    }
+
+    footer {
+        background-color: var(--header-footer-buttons);
+        padding: var(--less-space);
+    }
+
+    small {
+        font-family: var(--subhead-and-body);
+        font-size: small;
+        font-style: italic;
+
+    }
+
+}
+
+@layer layout {
+     .work-grid, .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--more-space);
+     }
+
+
+
+}
+
+@layer components {
+    .hero {
+        background-color: var(--hero-card-nav);
+        border-radius: var(--radius);
+        padding: var(--more-space);
+        margin: var(--more-space);
+        color: var(--background-color);
+        display: flex;
+        justify-content: center;
+     }
+
+     .hero img {
+        padding: var(--more-space);
+
+     }
+     
+    figure {
+        background-color: var(--hero-card-nav);
+        border-radius: var(--radius);
+        outline: 2px solid var(--text-color);
+        display: block;
+        max-width: max-content;
+        margin: 0 auto;
+        margin-bottom: var(--less-space);
+
+     }
+
+     figure img {
+        margin: var(--more-space);
+    
+     }
+
+
+    .skills{
+        list-style-position: inside;
+    }
+
+    .skills li {
+        list-style-type: square;
+        font-family: var(--subhead-and-body);
+        font-weight: var(--body-weight);
+     }
+
+
+     .card {
+        background-color: var(--hero-card-nav);
+        border-radius: var(--radius);
+        padding: var(--more-space);
+        margin: var(--less-space);
+     }
+
+     .contact-mode {
+       --contact-mode-flow: column-reverse;
+
+        background-color: var(--hero-card-nav);
+        border-radius: var(--radius);
+        padding: var(--more-space);
+        margin: var(--more-space);
+        display: flex;
+        flex-direction: var(--contact-mode-flow);
+
+     }
+
+     .contact-img {
+        border-radius: 50%;
+
+    }
+
+     .button a {
+        background-color: var(--header-footer-buttons);
+        padding: var(--more-space);
+        border-radius: var(--radius);
+        color: var(--text-color);
+
+     }
+
+     a:focus {
+        outline: var(--on-focus);
+     }
+}
+
+@layer utilities {
+
+    .block-text {
+        margin-right: 5rem;
+        margin-left: 5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        line-height: 200%;
+
+    }
+
+    .center-text {
+        text-align: center;
+
+    }
+
+    .smaller-block-text {
+        margin-right: 2.5rem;
+        margin-left: 2.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        line-height: 200%;
+    }
+
+
+}
+
+@layer states {
+     a:hover{
+        background-color: var(--background-color);
+        color: var(--text-color);
+
+    }
+
+    a:active {
+        color: purple;
+
+    }
+
+    figure img:hover {
+        transform: scale(1.5);
+    }
+
+    nav ul li a[aria-current="page"] {
+       background-color: red;   
+        
+    }
+
+    header a:focus-visible {
+        outline: var(--on-focus);
+        
+    }
+
+
+}
+
+@layer overrides {
+
+}
+
+/*media queries print*/
+
+@media print {
+    body {
+        background-color: #ffffff;
+        color: var(--text-color);
+    }
+
+    header, footer {
+        visibility: hidden;
+        display: none;
+
+    }
+
+    .contact-mode, .card {
+       background-color: white;
+       break-inside: auto;
+
+    }
+
+    figure {
+        outline: none;
+        break-inside: auto;
+    }
+
+
+
+}
+
