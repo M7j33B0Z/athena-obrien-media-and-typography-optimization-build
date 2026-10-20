@@ -144,8 +144,8 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: var(--more-space);
+    
      }
-
 
 
 }
@@ -228,6 +228,16 @@
 
      a:focus {
         outline: var(--on-focus);
+     }
+
+    @container (max-width: 750px){
+
+
+     }
+
+     @container (max-width: 1080px){
+
+
      }
 }
 
