@@ -147,8 +147,8 @@
 
 @layer layout {
     grid-wrap {
-        container-type: inline-size;
         display: grid;
+        container-type: inline-size;
     }
 
      .work-grid, .contact-grid, .card-grid {
@@ -166,8 +166,8 @@
         display: flex;
         background-color: var(--hero-card-nav);
         border-radius: var(--radius);
-        padding-block: 0 auto;
-        padding-inline: 0 auto;
+        padding-block: 0;
+        padding-inline: 0;
         color: var(--background-color);
         justify-content: center;
 
