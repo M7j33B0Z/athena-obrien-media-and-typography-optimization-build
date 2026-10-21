@@ -1,8 +1,11 @@
-# CSS Architecture Package
-CSS and HTML for Module 2: Deliverable: CSS Architecture Package
+# Responsive Layout Systems Build
+CSS and HTML for Module 3: Deliverable: Responsive Layout Systems Build
+
+# Subgrid Justification
+I did not include a subgrid. I do not currently have enough content on my pages to justify a subgrid. However, I might add one later when I write out content for my resume page, if I need to reorganize the written content.
 
 # Testing evidence
-I reduced duplication by creating a single rule for all of the cards on my resume page and all of the figures on my work page. I replaced repeated values such as color font-family, and spacing sizes with variables. I clarified naming by giving my color variables names that represent what parts of the website I am styling with them. For example, my green color is mostly used for cards and the nav buttons as well as the hero background, so I named it --hero-card-nav. Before my refactoring, I had four separate card names for each card on my resume page. After refactoring, I named all four cards ".card" instead. This allowed me to write one ruleset for all four cards, instead of one individual ruleset.
+I tested my website at 200-450px width, 450-750px width, and 750-1080px width, and at various zoom levels in Firefox and Chrome. I used Silktide and manual tabbing to check my focus order. Silktide verified that the computer was reading the focus order correctly, and manual tabbing showed me that the focus commands were still working. To test my user preference, I . To test my fallback condition, I .
 
 # AI Disclosure
-I used AI to check for missing states, only after all of my work was complete. It told me that I was missing the component-specific token, that I had weak utilities, and that I needed a more specific print statement than just changing the background color to white. I checked example print statements on the MDN, and then changed my print statement to include more elements, similar to the examples that I found there. I used the MDN to research print statement components, such as break-inside. I also reviewed information about utility states in the lectures and the MDN. I then re-examined my utilities, and created two new utility states that are more specific after considering my website's needs. For the component-specific token, I added a special flex property inside my contact mode class. (Even though I searched up about component-specific tokens on the MDN, I did not understand that they were supposed to go _inside_ the components they were targeting until received instructor feedback.)
+I did not use AI to complete this assignment.
