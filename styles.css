@@ -11,7 +11,7 @@
   }
 
   body {
-    margin: 0;
+    margin-inline: 0;
   }
 
 /*ROOT*/
@@ -49,7 +49,8 @@
 
 @layer base {
     body {
-        margin: 0 auto;
+        margin-inline: 0 auto;
+        margin-block: 0 auto;
         background-color: var(--background-color);
 
     }
@@ -65,7 +66,7 @@
 
     nav {
         display: flex;
-        padding: var(--more-space);
+        padding-block: var(--more-space);
         
     }
 
@@ -74,7 +75,8 @@
         padding: 0;
         display: flex;
         gap: var(--less-space);
-        margin: var(--more-space);
+        margin-block: var(--more-space);
+        margin-inline: var(--more-space);
         justify-content: center;
 
     }
@@ -102,7 +104,7 @@
      p {
         font-family: var(--subhead-and-body);
         font-weight: var(--body-weight);
-        margin-left: var(--more-space);
+        margin-inline-start: var(--more-space);
     }
 
     a {
@@ -114,20 +116,24 @@
         background-color: var(--hero-card-nav);
         border-radius: var(--radius);
 
-        padding: var(--less-space);
+        padding-inline: var(--more-space);
+        padding-block: var(--less-space);
+
     }
 
     figcaption {
         font-family: var(--subhead-and-body);
         font-weight: var(--body-weight);
-        padding: var(--more-space);
+        padding-block: var(--more-space);
+        padding-inline: var(--more-space);
         
         
     }
 
     footer {
         background-color: var(--header-footer-buttons);
-        padding: var(--less-space);
+        padding-inline: var(--less-space);
+        padding-block: var(--less-space);
     }
 
     small {
@@ -140,10 +146,15 @@
 }
 
 @layer layout {
-     .work-grid, .contact-grid {
+    grid-wrap {
+        container-type: inline-size;
         display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--more-space);
+    }
+
+     .work-grid, .contact-grid, .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+        gap: clamp(1rem, 1rem, 1rem);
     
      }
 
@@ -152,17 +163,19 @@
 
 @layer components {
     .hero {
+        display: flex;
         background-color: var(--hero-card-nav);
         border-radius: var(--radius);
-        padding: var(--more-space);
-        margin: var(--more-space);
+        padding-block: 0 auto;
+        padding-inline: 0 auto;
         color: var(--background-color);
-        display: flex;
         justify-content: center;
+
      }
 
      .hero img {
-        padding: var(--more-space);
+        padding-block: var(--less-space);
+        padding-inline: var(--less-space);
 
      }
      
@@ -173,12 +186,13 @@
         display: block;
         max-width: max-content;
         margin: 0 auto;
-        margin-bottom: var(--less-space);
+        margin-block-end: var(--less-space);
 
      }
 
      figure img {
-        margin: var(--more-space);
+        margin-block: var(--more-space);
+        margin-inline: var(--more-space);
     
      }
 
@@ -197,8 +211,10 @@
      .card {
         background-color: var(--hero-card-nav);
         border-radius: var(--radius);
-        padding: var(--more-space);
-        margin: var(--less-space);
+        padding-block: var(--more-space);
+        padding-inline: var(--more-space);
+        margin-block: var(--less-space);
+        margin-inline: var(--less-space);
      }
 
      .contact-mode {
@@ -206,8 +222,10 @@
 
         background-color: var(--hero-card-nav);
         border-radius: var(--radius);
-        padding: var(--more-space);
-        margin: var(--more-space);
+        padding-block: var(--more-space);
+        padding-inline: var(--more-space);
+        margin-block: var(--more-space);
+        margin-inline: var(--more-space);
         display: flex;
         flex-direction: var(--contact-mode-flow);
 
@@ -220,7 +238,7 @@
 
      .button a {
         background-color: var(--header-footer-buttons);
-        padding: var(--more-space);
+        padding-block: var(--more-space);
         border-radius: var(--radius);
         color: var(--text-color);
 
@@ -229,25 +247,13 @@
      a:focus {
         outline: var(--on-focus);
      }
-
-    @container (max-width: 750px){
-
-
-     }
-
-     @container (max-width: 1080px){
-
-
-     }
 }
 
 @layer utilities {
 
     .block-text {
-        margin-right: 5rem;
-        margin-left: 5rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-inline: 5rem;
+        margin-block: 2rem;
         line-height: 200%;
 
     }
@@ -258,10 +264,8 @@
     }
 
     .smaller-block-text {
-        margin-right: 2.5rem;
-        margin-left: 2.5rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-inline: 2.5rem;
+        margin-block: 1rem;
         line-height: 200%;
     }
 
@@ -300,6 +304,40 @@
 @layer overrides {
 
 }
+
+/*support and preference queries*/
+
+@media (prefers-contrast: custom) {
+
+}
+
+/*media queries medium*/
+
+@media screen and (max-width: 750px) {    
+@container (width < 750px) {
+    .hero img {
+        width: auto-fit;
+    }
+
+}
+
+}
+
+/*media queries large*/
+
+@media screen and (max-width: 1000px) {
+    @container (width < 1000px) {
+    .hero img {
+        width: auto-fit;
+    }
+
+
+}
+
+
+}
+
+
 
 /*media queries print*/
 
