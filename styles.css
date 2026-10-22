@@ -187,8 +187,8 @@
 
      }
 
-     @container (width < 1fr) {
-        .hero img{
+     @container (width > 800px) {
+        .hero {
             visibility: collapse
         }
      }
