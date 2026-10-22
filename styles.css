@@ -311,15 +311,14 @@
 
 /*support and preference queries*/
 
-@media (prefers-contrast: high) {
+@media (prefers-contrast: custom) {
     body {
         background-color: #ffffff;
         color: var(--text-color);
     }
 
     header, footer {
-        visibility: hidden;
-        display: none;
+        background-color: #ffffff;
 
     }
 
@@ -328,35 +327,16 @@
        break-inside: auto;
 
     }
-
-    
-
-
 }
 
-/*media queries medium*/
-
-@media screen and (max-width: 750px) {    
-    @container (width < 750px) {
-    
-
+@supports not (display: grid) {
+    .figure {
+    display: flex;
+    flex-flow: column-reverse;
+    gap: clamp(var(--more-space), var(--more-space), var(--more-space));
+   
+  }
 }
-
-}
-
-/*media queries large*/
-
-@media screen and (max-width: 1000px) {
-    @container (width < 1000px) {
-    
-
-
-}
-
-
-}
-
-
 
 /*media queries print*/
 
