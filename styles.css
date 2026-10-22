@@ -146,30 +146,34 @@
 }
 
 @layer layout {
-    grid-wrap {
-        display: grid;
-        container-type: inline-size;
+    .grid-wrap {
+      inline-size: min(100% - 3rem, 70rem);
+      margin-inline: auto;
     }
 
-     .work-grid, .contact-grid, .card-grid {
+   .work-grid, .contact-grid, .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-        gap: clamp(1rem, 1rem, 1rem);
-    
+        gap: clamp(var(--more-space), var(--more-space), var(--more-space));
      }
-
 
 }
 
 @layer components {
+    .hero-wrap {
+        inline-size: min(100% - 40rem, 50rem);
+        margin-inline: auto;
+    }
+
     .hero {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+        gap: clamp(var(--more-space), var(--more-space), var(--more-space));
+        padding-block: var(--more-space);
         background-color: var(--hero-card-nav);
         border-radius: var(--radius);
-        padding-block: 0;
-        padding-inline: 0;
         color: var(--background-color);
-        justify-content: center;
+        justify-items: center;
 
      }
 
@@ -265,7 +269,7 @@
 
     .smaller-block-text {
         margin-inline: 2.5rem;
-        margin-block: 1rem;
+        margin-block: var(--more-space);
         line-height: 200%;
     }
 
@@ -307,17 +311,34 @@
 
 /*support and preference queries*/
 
-@media (prefers-contrast: custom) {
+@media (prefers-contrast: high) {
+    body {
+        background-color: #ffffff;
+        color: var(--text-color);
+    }
+
+    header, footer {
+        visibility: hidden;
+        display: none;
+
+    }
+
+    .contact-mode, .card {
+       background-color: white;
+       break-inside: auto;
+
+    }
+
+    
+
 
 }
 
 /*media queries medium*/
 
 @media screen and (max-width: 750px) {    
-@container (width < 750px) {
-    .hero img {
-        width: auto-fit;
-    }
+    @container (width < 750px) {
+    
 
 }
 
@@ -327,9 +348,7 @@
 
 @media screen and (max-width: 1000px) {
     @container (width < 1000px) {
-    .hero img {
-        width: auto-fit;
-    }
+    
 
 
 }
