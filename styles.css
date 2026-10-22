@@ -161,12 +161,16 @@
 
 @layer components {
     .hero-wrap {
+        display: grid;
         inline-size: min(100% - 40rem, 50rem);
-        margin-inline: auto;
+        container-type: inline-size;
+        margin: 0 auto;
+
     }
 
     .hero {
         display: grid;
+        margin-inline: auto;
         grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
         gap: clamp(var(--more-space), var(--more-space), var(--more-space));
         padding-block: var(--more-space);
@@ -181,6 +185,12 @@
         padding-block: var(--less-space);
         padding-inline: var(--less-space);
 
+     }
+
+     @container (width < 1fr) {
+        .hero img{
+            visibility: collapse
+        }
      }
      
     figure {
