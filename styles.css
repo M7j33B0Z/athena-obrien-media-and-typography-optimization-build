@@ -64,6 +64,7 @@
         align-content: center;
     }
 
+    
     nav {
         display: flex;
         padding-block: var(--more-space);
