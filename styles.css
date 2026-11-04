@@ -155,7 +155,7 @@
    .work-grid, .contact-grid, .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-        gap: clamp(var(--more-space), var(--more-space), var(--more-space));
+        gap: clamp(5rem, 5rem, 5rem);
      }
 
 }
