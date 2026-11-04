@@ -247,7 +247,10 @@
      }
 
      .contact-img {
+        padding-block: var(--more-space);
+        margin-block: var(--more-space);
         border-radius: 50%;
+        background-color: var(--background-color);
 
     }
 
