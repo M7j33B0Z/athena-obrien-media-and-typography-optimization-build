@@ -45,6 +45,16 @@
 
 /* Global Styles - Mobile First */
 
+@font-face {
+    font-family: var(--heading-one);
+    src: url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Gravitas+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+}
+
+@font-face {
+    font-family: var(--subhead-and-body);
+    src: url("https://use.typekit.net/kxq0kzg.css");
+}
+
 @layer base, layout, components, utilities, states, overrides, print;
 
 @layer base {
@@ -91,7 +101,7 @@
         font-family: var(--heading-one);
         font-weight: var(--h1-weight);
         font-style: var(--font-style);
-        
+        font-size: clamp(2em, 2.5vw, 2.5em);
         
     }
 
@@ -100,12 +110,14 @@
         font-family: var(--subhead-and-body);
         font-weight: var(--h2-weight);
         font-style: var(--font-style);
+        font-size: clamp(1.5em, 2.5vw, 2em);
     }
 
      p {
         font-family: var(--subhead-and-body);
         font-weight: var(--body-weight);
         margin-inline-start: var(--more-space);
+        font-size: clamp(1em, 2.5vw, 2em);
     }
 
     a {
@@ -119,6 +131,7 @@
 
         padding-inline: var(--more-space);
         padding-block: var(--less-space);
+        font-size: clamp(1em, 2.5vw, 2em);
 
     }
 
@@ -127,6 +140,7 @@
         font-weight: var(--body-weight);
         padding-block: var(--more-space);
         padding-inline: var(--more-space);
+        font-size: clamp(1em, 2.5vw, 2em);
         
         
     }
@@ -135,11 +149,12 @@
         background-color: var(--header-footer-buttons);
         padding-inline: var(--less-space);
         padding-block: var(--less-space);
+    
     }
 
     small {
         font-family: var(--subhead-and-body);
-        font-size: small;
+        font-size: clamp(0.5em, 2.5vw, 0.75em);
         font-style: italic;
 
     }
@@ -162,16 +177,15 @@
 
 @layer components {
     .hero-wrap {
-        display: grid;
-        inline-size: min(100% - 40rem, 50rem);
+        display: flex;
         container-type: inline-size;
-        margin: 0 auto;
+        inline-size: min(100% - 40rem, 50rem);
 
     }
 
     .hero {
         display: grid;
-        margin-inline: auto;
+        margin: 0 auto;
         grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
         gap: clamp(var(--more-space), var(--more-space), var(--more-space));
         padding-block: var(--more-space);
@@ -185,6 +199,7 @@
      .hero img {
         padding-block: var(--less-space);
         padding-inline: var(--less-space);
+        margin: 0 auto;
 
      }
 
@@ -220,7 +235,9 @@
         list-style-type: square;
         font-family: var(--subhead-and-body);
         font-weight: var(--body-weight);
-     }
+        font-size: clamp(1em, 2.5vw, 2em);
+     
+    }
 
 
      .card {
@@ -230,6 +247,7 @@
         padding-inline: var(--more-space);
         margin-block: var(--less-space);
         margin-inline: var(--less-space);
+
      }
 
      .contact-mode {
@@ -259,6 +277,7 @@
         padding-block: var(--more-space);
         border-radius: var(--radius);
         color: var(--text-color);
+        font-size: clamp(1em, 2.5vw, 2em);
 
      }
 
