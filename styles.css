@@ -177,9 +177,9 @@
 
 @layer components {
     .hero-wrap {
-        display: flex;
         container-type: inline-size;
-        inline-size: min(100% - 40rem, 50rem);
+        inline-size: min(100% - 2rem, 50rem);
+        margin-inline: auto;
 
     }
 
@@ -193,10 +193,20 @@
         border-radius: var(--radius);
         color: var(--background-color);
         justify-items: center;
+        inline-size: 100%;
+
+     }
+
+     .hero picture {
+        display: block;
+        min-inline-size: 0;
 
      }
 
      .hero img {
+        display: block;
+        max-inline-size: 100%;
+        block-size: auto;
         padding-block: var(--less-space);
         padding-inline: var(--less-space);
         margin: 0 auto;
@@ -209,22 +219,29 @@
         }
      }
      
-    figure {
-        background-color: var(--hero-card-nav);
-        border-radius: var(--radius);
-        outline: 2px solid var(--text-color);
-        display: block;
-        max-width: max-content;
-        margin: 0 auto;
-        margin-block-end: var(--less-space);
-
-     }
-
-     figure img {
-        margin-block: var(--more-space);
-        margin-inline: var(--more-space);
+    .work-grid figure {
+      min-inline-size: 0;
+      max-width: none;
+      margin: 0;
+      padding: var(--more-space);
+      background-color: var(--hero-card-nav);
+      border-radius: var(--radius);
+      outline: 2px solid var(--text-color);
     
-     }
+    }
+
+    .work-grid picture {
+      display: block;
+    
+    }
+
+    .work-grid figure img {
+      display: block;
+      inline-size: 100%;
+      block-size: auto;
+      margin: 0;
+
+    }
 
 
     .skills{
