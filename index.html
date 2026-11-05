@@ -24,11 +24,11 @@
         <h1 class="center-text">Athena O'Brien's Portfolio</h1>
         <section class="hero-wrap">
         <section class="hero">
-             <img
-                src="images/headshot-250.jpg"
-                srcset="images/headshot-250.jpg 480w, images/headshot-800.jpg 800w, images/headshot-800.jpg 1200w"
-                sizes="(min-width: 60rem) 50vw, 100vw"
-                alt="a picture of Athena, a young woman in a large, pink bow.">
+            <picture>
+                <source srcset="images/headshot-800.jpg" media="(min-width: 750px)">
+                <source srcset="images/headshot-1200.jpg" media="(min-width: 1200px)">
+                <img src="images/headshot-250.jpg" alt="a picture of Athena, a young woman in a large pink bow.">
+            </picture>
         </section>
         </section>
         
