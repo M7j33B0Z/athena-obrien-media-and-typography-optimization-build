@@ -227,6 +227,7 @@
     .work-grid figure {
       min-inline-size: 0;
       max-width: none;
+      min-width: 20rem;
       margin: 0;
       padding: var(--more-space);
       background-color: var(--hero-card-nav);
@@ -270,6 +271,7 @@
         margin-block: var(--less-space);
         margin-inline: var(--less-space);
         font-size: clamp(1em, 2.5vw, 1.5em);
+        min-width: 20rem;
 
      }
 
@@ -344,8 +346,11 @@
 
     }
 
-    figure img:hover {
+    @media screen and (min-width < 750px) {
+        figure img:hover {
         transform: scale(1.5);
+    }
+        
     }
 
     nav ul li a[aria-current="page"] {
