@@ -55,6 +55,3 @@ I did not include compression, because my files were not very large to begin wit
 
 # AI Disclosure
 I did not use AI to complete this assignment.
-
-    Testing evidence: document checks for responsive widths, 200% zoom, slow network, image dimensions/file size, alt text, captions/transcripts when applicable, and layout shift risk.
-    AI disclosure: if used, document purpose, output considered, verification, and what changed.
