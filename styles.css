@@ -1,8 +1,15 @@
 /* CSS by Athena O'Brien */
 
 /* Imported Fonts */
-@import url("https://use.typekit.net/kxq0kzg.css");
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Gravitas+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: "Gravitas One";
+    src: url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Gravitas+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+}
+
+@font-face {
+    font-family: "helvetica-neue-lt-pro";
+    src: url("https://use.typekit.net/kxq0kzg.css");
+}
 /* CSS Reset */
  *,
   *::before,
@@ -44,17 +51,6 @@
     }
 
 /* Global Styles - Mobile First */
-
-@font-face {
-    font-family: var(--heading-one);
-    src: url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Gravitas+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-}
-
-@font-face {
-    font-family: var(--subhead-and-body);
-    src: url("https://use.typekit.net/kxq0kzg.css");
-}
-
 @layer base, layout, components, utilities, states, overrides, print;
 
 @layer base {
